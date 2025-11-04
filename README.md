@@ -1,18 +1,19 @@
-Trying to get import.meta to be "ignored" correctly.
+Trying to get import.meta to be "ignored" correctly by webpack.
 
 (Bigger picture: in Bitfocus Companion, with default webpack settings,
    `import.meta.url` is converted to a hardcoded string with the full dev environment path in:
     @sentry/node-core/build/esm/sdk/esmLoader.js -- since the goal is distribute the code, this is an error.
     
-    In an attempt to prevent this behavior, setting module.parser.javascript.importMeta: false in webpackconfig fixes that problem but causes others including a variation on this simplified one...)
+In an attempt to prevent this behavior, setting module.parser.javascript.importMeta: false in webpackconfig fixes that problem but causes others including a variation on this simplified one...)
 
 
 To run (assuming corepack is enabled?, etc.):
 ~~~
 yarn
+# test that the code works:
 node FixImports.mts  
-or: node FixImport.ts
 
+# now pack and test the packed code:
 npx webpack
 node dist/main.mjs
 ~~~
