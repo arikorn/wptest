@@ -1,0 +1,25 @@
+{
+  "name": "ari",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "npm": "please-use-yarn",
+    "yarn": "^4.5",
+    "node": ">=22.21.0 <23"
+  },
+    "scripts": {
+    "build": "tsc && webpack",
+    "dist": "tsx ./tools/build/complete.mts",
+    "windist": "run dist win-x64"
+  },
+  "packageManager": "yarn@4.10.3",
+  "devDependencies": {
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3",
+    "webpack": "^5.102.1",
+    "webpack-cli": "^6.0.1"
+  },
+  "dependencies": {
+    "fs-extra": "^11.3.2"
+  }
+}
